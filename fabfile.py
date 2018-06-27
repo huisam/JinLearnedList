@@ -28,10 +28,10 @@ def ls():
         run('ls')
 
 def deploy():
-    code_dir = '/home/ubuntu/test/jinmine'
+    code_dir = '/home/ubuntu/jinmine'
     with settings(warn_only=True):
         if run("test -d %s" % code_dir).failed:
-            run("git clone ubuntu@ubuntu:https://github.com/huisam/jinmine.git %s",code_dir)
+            run("git clone https://github.com/huisam/jinmine.git")
             sleep(2)
     with cd(code_dir):
         run("git pull")
