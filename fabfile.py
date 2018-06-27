@@ -1,6 +1,10 @@
 from __future__ import with_statement
 from fabric.contrib.console import confirm
-from fabric.api import local,settings,abort,run
+from fabric.api import local,settings,abort,run,cd,env
+from time import sleep
+env.hosts = ['localhost']
+
+
 def test():
     with settings(warn_only=True):
         result = local('./manage.py test my_app', capture=True)
@@ -24,4 +28,11 @@ def ls():
         run('ls')
 
 def deploy():
-        hostname()
+    code_dir = '/home/ubuntu/test/jinmine'
+    with settings(warn_only=True):
+        if run("test -d %s" % code_dir).failed:
+            run("git clone ubuntu@ubuntu:https://github.com/huisam/jinmine.git %s",code_dir)
+            sleep(2)
+    with cd(code_dir):
+        run("git pull")
+        run("cat manage.py") 
