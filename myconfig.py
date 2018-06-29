@@ -1,7 +1,6 @@
 from fabric.api import *
-
+@task
 def anoymous():
-    run(ls)
+    run('ls')
 
 
-anoymous();
