@@ -9,8 +9,9 @@ from time import sleep
 def test():
     with settings(warn_only=True):
         result = local("./manage.py test my_app", capture=True)
-    if result.failed and not confirm("Tests failed. Continue anyway?"):
-        abort("Aborting at user request.")
+    if result.failed and not confirm("Tests failed. Continue anyway?",):
+        abort("borting at user request.")
+	local('pwd')
 
 @task(alias='user')
 def new_user(username, admin='no', comment="No comment provided"):
@@ -35,7 +36,7 @@ def hostname():
 	name = prompt('Insert the name of command :') 
 	run('%s'%name)
 @task
-@hosts('localhost')
+@hosts('localhost','test@192.168.56.102')
 def ls():
 	with cd('/home/ubuntu/jinmine'):
 		run('ls')
@@ -44,9 +45,10 @@ def ls():
 	run('ls')
 	with hide('stderr','stdout'):
 		run('ls')
-
+@task
+@hosts('test@192.168.56.102')
 def deploy():
-    code_dir = '/home/ubuntu/jinmine'
+    code_dir = '/home/test/jinmine'
     with settings(warn_only=True):
         if run("test -d %s" % code_dir).failed:
             run("git clone https://github.com/huisam/jinmine.git")
@@ -66,3 +68,12 @@ def reboots():
 def download():
 	with cd('/home/ubuntu/jinmine'):
 		put('fabfile.py', '/home/ubuntu/jinmine/test_fab')
+
+@task
+def runsudo():
+	sudo('whoami')
+
+@task
+@hosts('localhost','test@192.168.56.102')
+def send():
+	put('~/.vimrc', '~/test2/')
