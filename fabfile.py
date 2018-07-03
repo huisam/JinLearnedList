@@ -1,25 +1,30 @@
 from __future__ import with_statement
 import myconfig
-from fabric.contrib.console import confirm
-from fabric.api import *
 from fabric.colors import red,green,blue
 from time import sleep
-#env.hosts = ['localhost']
+
+from fabric.api import *
+from fabric.contrib.console import confirm
 @task
 def test():
-    with settings(warn_only=True):
-        result = local("./manage.py test my_app", capture=True)
-    if result.failed and not confirm("Tests failed. Continue anyway?",):
-        abort("borting at user request.")
-	local('pwd')
+	"""
+	Test manage.py
+	"""
+	with settings(warn_only=True):
+		result = local("./manage.py my_app", capture=True)
+	if result.failed and not confirm(red("Tests failed. Continue anyway?",)):
+		abort(red("aborting at user request."))
 
 @task(alias='user')
 def new_user(username, admin='no', comment="No comment provided"):
     print("New User (%s): %s" % (username, comment))
     pass
 @task
-def color():
-    print(green("This is green."))
+def color(arg1):
+	"""
+	Use green color
+	"""
+	print(green("This is green."))
 
 def commit():
     local("git add -A && git commit")
@@ -27,14 +32,15 @@ def commit():
 def push():
     local("git push")
 
-def prepare_deploy():
-    test()
-    commit()
-    push()
 @task
 def hostname():
 	name = prompt('Insert the name of command :') 
 	run('%s'%name)
+@task
+def uname():
+	with hide('stdout'):
+		print(red(run(' uname -a')))
+
 @task
 @hosts('localhost','test@192.168.56.102')
 def ls():
@@ -67,7 +73,7 @@ def reboots():
 @hosts('localhost')
 def download():
 	with cd('/home/ubuntu/jinmine'):
-		put('fabfile.py', '/home/ubuntu/jinmine/test_fab')
+		put('fabfile.py', '~/')
 
 @task
 def runsudo():
@@ -77,3 +83,23 @@ def runsudo():
 @hosts('localhost','test@192.168.56.102')
 def send():
 	put('~/.vimrc', '~/test2/')
+@task
+def unametest():
+	run('uname -a')
+
+@task
+@hosts('localhost')
+def getting():
+	get('a.txt', '/home/ubuntu/jinmine')
+
+@task
+@hosts('localhost')
+def testcd():
+	"""
+	Use With & Change Directory
+	"""
+	with cd('/home/ubuntu/jinmine'):
+		run('ls')
+	run('ls')
+
+
