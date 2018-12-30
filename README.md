@@ -5,7 +5,7 @@ To Study lot of things
 
 #### Data struture
 
-#### Alogirthm
+#### Algorithm
 
 #### Network
 
