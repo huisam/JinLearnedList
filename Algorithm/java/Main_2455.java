@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Q2455 {
+public class Main_2455 {
 	public static void main(String[] args) throws IOException {
 		// use buffer Reader -> 80ms
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

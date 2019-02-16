@@ -2,7 +2,7 @@ package baekjoon;
 
 import java.util.Scanner;
 
-public class Q2455_scanner {
+public class Main_2455_scanner {
 	public static void main(String[] args) {
 		// use scanner -> 108ms
 		Scanner sc = new Scanner(System.in);
