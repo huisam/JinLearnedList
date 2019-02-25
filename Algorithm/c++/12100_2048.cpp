@@ -16,7 +16,7 @@ void dfs(vector<vector<int>> m, int cnt, int now) {
 		return;
 	}
 	else {
-		//À§
+		//ìœ„
 		vector<vector<int>> t = m;
 		int val = 0;
 		for(int a = 0; a < n; a++)
@@ -49,7 +49,7 @@ void dfs(vector<vector<int>> m, int cnt, int now) {
 			for (int j = 0; j < n; j++)
 				val = max(val, t[i][j]);
 		dfs(t, cnt + 1, val);
-		//¾Æ·¡
+		// ì•„ëž˜
 		t = m;
 		val = 0;
 		for (int a = 0; a < n; a++)
@@ -82,7 +82,7 @@ void dfs(vector<vector<int>> m, int cnt, int now) {
 			for (int j = 0; j < n; j++)
 				val = max(val, t[i][j]);
 		dfs(t, cnt + 1, val);
-		// ¿ÞÂÊ
+		// ì™¼ìª½
 		t = m;
 		val = 0;
 		for (int a = 0; a < n; a++)
@@ -115,7 +115,7 @@ void dfs(vector<vector<int>> m, int cnt, int now) {
 			for (int j = 0; j < n; j++)
 				val = max(val, t[i][j]);
 		dfs(t, cnt + 1, val);
-		// ¿À¸¥ÂÊ
+		// ì˜¤ë¥¸ìª½	
 		t = m;
 		val = 0;
 		for (int a = 0; a < n; a++)
