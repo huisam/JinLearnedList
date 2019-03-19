@@ -28,7 +28,7 @@
 
 >* Client가 성공적으로 Server와 연결이 되었으며, 전송할 데이터가 있다면 지금 전송할 수 있다!
 
-<img src="https://user-images.githubusercontent.com/34855745/54589736-d1007380-4a69-11e9-9231-fe37ed8e5a90.png" width="500" height="400">
+<img src="https://user-images.githubusercontent.com/34855745/54590969-91875680-4a6c-11e9-9fd0-54cb20a7e521.png" width="500" height="400">
 
 > 1.Client -> Server : FIN
 
