@@ -2,8 +2,8 @@
 
 ### [1장] - TCP
 **About**
-> Transport Layer에서 사용하는 프로토콜로 <code>**신뢰성**</code>을 보장하는 Connective Service이다.
-> Segmant 단위로 패킷을 보내기 위해 **IP**를 바탕으로 목적지와 출발지를 정하게 된다!!!
+> Transport Layer에서 사용하는 프로토콜로 <code>**신뢰성**</code>을 보장하는 Connective Service이다.<br>
+> Segmant 단위로 패킷을 보내기 위해 **IP**를 바탕으로 목적지와 출발지를 정하게 된다!!!<br>
 > 기본적인 연결 방식은 **3-way-handshaking**으로 연결 설정하고, 끊을 때는 **4-way-handshaking**으로 연결 해제한다!!
 >* TCP가 제공하는 특징들
 >> 1. Flow Control : 흐름제어 - 데이터 처리 속도를 조절하여 수신자의 <code>오버플로우</code>를 방지한다
