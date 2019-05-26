@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="94.21212121212123" y="147.0">visitor.domain.Bus</node>
+    <node x="62.87878787878789" y="294.0">visitor.visitor.ViewVisitor</node>
+    <node x="93.54545454545456" y="565.0">visitor.visitor.CarViewVisitor</node>
+    <node x="0.0" y="418.0">visitor.domain.Truck</node>
+    <node x="7.681818181818215" y="0.0">visitor.domain.Car</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="visitor.domain.Truck" target="visitor.domain.Car">
+      <point x="-57.66666666666666" y="-48.5" />
+      <point x="28.833333333333343" y="393.0" />
+      <point x="52.166666666666686" y="393.0" />
+      <point x="52.166666666666686" y="122.0" />
+      <point x="36.51515151515156" y="122.0" />
+      <point x="-57.66666666666666" y="48.5" />
+    </edge>
+    <edge source="visitor.visitor.ViewVisitor" target="visitor.domain.Truck">
+      <point x="0.0" y="37.0" />
+      <point x="133.37878787878788" y="393.0" />
+      <point x="144.16666666666669" y="393.0" />
+      <point x="57.666666666666686" y="-48.5" />
+    </edge>
+    <edge source="visitor.domain.Bus" target="visitor.visitor.ViewVisitor">
+      <point x="0.0" y="48.5" />
+      <point x="47.0" y="-37.0" />
+    </edge>
+    <edge source="visitor.domain.Bus" target="visitor.domain.Car">
+      <point x="0.0" y="-48.5" />
+      <point x="180.71212121212125" y="122.0" />
+      <point x="151.84848484848487" y="122.0" />
+      <point x="57.66666666666666" y="48.5" />
+    </edge>
+    <edge source="visitor.visitor.CarViewVisitor" target="visitor.domain.Truck">
+      <point x="-52.66666666666666" y="-37.0" />
+      <point x="119.8787878787879" y="540.0" />
+      <point x="86.5" y="540.0" />
+      <point x="0.0" y="48.5" />
+    </edge>
+    <edge source="visitor.visitor.CarViewVisitor" target="visitor.visitor.ViewVisitor">
+      <point x="0.0" y="-37.0" />
+      <point x="172.54545454545456" y="540.0" />
+      <point x="194.16666666666669" y="540.0" />
+      <point x="194.16666666666669" y="393.0" />
+      <point x="180.37878787878788" y="393.0" />
+      <point x="47.0" y="37.0" />
+    </edge>
+    <edge source="visitor.domain.Truck" target="visitor.visitor.ViewVisitor">
+      <point x="0.0" y="-48.5" />
+      <point x="-47.0" y="37.0" />
+    </edge>
+    <edge source="visitor.visitor.CarViewVisitor" target="visitor.domain.Bus">
+      <point x="52.66666666666665" y="-37.0" />
+      <point x="225.21212121212122" y="540.0" />
+      <point x="215.04545454545456" y="540.0" />
+      <point x="215.04545454545456" y="269.0" />
+      <point x="238.37878787878788" y="269.0" />
+      <point x="57.66666666666666" y="48.5" />
+    </edge>
+    <edge source="visitor.visitor.ViewVisitor" target="visitor.domain.Bus">
+      <point x="0.0" y="-37.0" />
+      <point x="133.37878787878788" y="269.0" />
+      <point x="123.04545454545456" y="269.0" />
+      <point x="-57.666666666666664" y="48.5" />
+    </edge>
+    <edge source="visitor.domain.Car" target="visitor.visitor.ViewVisitor">
+      <point x="0.0" y="48.5" />
+      <point x="94.18181818181822" y="122.0" />
+      <point x="73.50000000000003" y="122.0" />
+      <point x="73.50000000000003" y="269.0" />
+      <point x="86.37878787878789" y="269.0" />
+      <point x="-47.0" y="-37.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="88.0" y="170.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
