@@ -19,7 +19,7 @@
 	* Openstack
 	* Kubernetes 
 
-개인 Repsitory에 없는 내용은 [블로그](https://huisam.tistory.com/) 에 개시중
+개인 Repository에 없는 내용은 [블로그](https://huisam.tistory.com/) 에 개시중
 
 ### To Do List
 
@@ -29,7 +29,7 @@
 
 * Design Pattern 더 정리
 	* Abstract Factory
-	* Birdge
+	* Bridge
 	* Observer
 	* Composite
 	* Template Method
