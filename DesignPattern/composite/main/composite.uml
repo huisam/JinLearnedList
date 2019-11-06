@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="159.0" y="125.0">designpattern.composite.Desk</node>
+    <node x="318.0" y="125.0">designpattern.composite.Chair</node>
+    <node x="159.0" y="0.0">designpattern.composite.CafeComposite</node>
+    <node x="0.0" y="125.0">designpattern.composite.CafeBean</node>
+    <node x="0.0" y="292.0">designpattern.composite.Cafe</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="designpattern.composite.CafeBean" target="designpattern.composite.CafeComposite">
+      <point x="0.0" y="-61.0" />
+      <point x="69.5" y="100.0" />
+      <point x="182.16666666666666" y="100.0" />
+      <point x="-46.33333333333334" y="37.5" />
+    </edge>
+    <edge source="designpattern.composite.Chair" target="designpattern.composite.CafeComposite">
+      <point x="0.0" y="-61.0" />
+      <point x="387.5" y="100.0" />
+      <point x="274.83333333333337" y="100.0" />
+      <point x="46.33333333333337" y="37.5" />
+    </edge>
+    <edge source="designpattern.composite.Desk" target="designpattern.composite.CafeComposite">
+      <point x="0.0" y="-61.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9146608315098468" x="228.5" y="218.5" />
+  <SelectedNodes>
+    <node>designpattern.composite.CafeComposite</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
