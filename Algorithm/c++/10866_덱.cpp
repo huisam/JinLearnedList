@@ -1,158 +1,157 @@
 #include<iostream>
-#include<cstring>
+
+int mstrcmp(const char *str1, const char *str2) {
+	int pos = 0;
+	while (str1[pos]) {
+		if (str1[pos] != str2[pos])
+			break;
+		pos++;
+	}
+	return str1[pos] - str2[pos];
+}
 
 using namespace std;
 
 struct Node {
+	int val;
 	Node *prev;
 	Node *next;
-	int val;
 };
 
-Node pool[10000];
 int nCnt;
+Node nodePool[10000];
 
 Node *newNode(int val) {
-	Node *n = &pool[nCnt++];
+	Node *n = &nodePool[nCnt++];
+	n->val = val;
 	n->prev = 0;
 	n->next = 0;
-	n->val = val;
 	return n;
 }
 
-struct List {
-	Node *head;
-	Node *tail;
-	int length;
+struct Deque {
+	Node *head = newNode(0);
+	Node *tail = newNode(0);
+	int cnt = 0;
 
-	void push_back(Node *node) {
-		length++;
-
-		if (head == 0) {
-			head = node;
-			tail = node;
-		}
-		else {
-			tail->next = node;
-			node->prev = tail;
-
-			tail = node;
-		}
+	void init() {
+		head->next = tail;
+		tail->prev = head;
 	}
 
-	void push_front(Node *node) {
-		length++;
+	void push_front(int val) {
+		Node *node = newNode(val);
+		cnt++;
+		
+		node->prev = head;
+		node->next = head->next;
 
-		if (tail == 0) {
-			head = node;
-			tail = node;
-		}
-		else {
-			head->prev = node;
-			node->next = head;
-
-			head = node;
-		}
+		head->next->prev = node;
+		head->next = node;
 	}
 
-	bool isEmpty() {
-		return length == 0;
+	void push_back(int val) {
+		Node *node = newNode(val);
+		cnt++;
+
+		node->next = tail;
+		node->prev = tail->prev;
+
+		tail->prev->next = node;
+		tail->prev = node;
+	}
+
+	int size() {
+		return cnt;
+	}
+
+	bool empty() {
+		return cnt == 0;
 	}
 
 	int pop_front() {
-		if (isEmpty())
+		if (empty()) {
 			return -1;
-
-		int val = head->val;
-		length--;
-		if (head == tail) {
-			head = 0;
-			tail = 0;
 		}
-		else {
-			Node *node = head;
-			head = head->next;
 
-			if (head != 0) head->prev = 0;
-			node->next = 0;
-		}
+		Node *node = head->next;
+		int val = node->val;
+
+		if(node->prev != 0) node->prev->next = node->next;
+		if(node->next != 0) node->next->prev = node->prev;
+
+		cnt--;
 		return val;
 	}
 
 	int pop_back() {
-		if (isEmpty())
+		if (empty()) {
 			return -1;
-
-		int val = tail->val;
-		length--;
-		if (head == tail) {
-			head = 0;
-			tail = 0;
 		}
-		else {
-			Node *node = tail;
-			tail = tail->prev;
 
-			if (tail != 0) tail->next = 0;
-			node->prev = 0;
-		}
+		Node *node = tail->prev;
+		int val = node->val;
+
+		if (node->prev != 0) node->prev->next = node->next;
+		if (node->next != 0) node->next->prev = node->prev;
+
+		cnt--;
 		return val;
 	}
 
-	int size() {
-		return length;
-	}
-	
 	int front() {
-		if (head == 0) return -1;
-		else return head->val;
+		if (empty()) {
+			return -1;
+		}
+		return head->next->val;
 	}
 
 	int back() {
-		if (tail == 0) return -1;
-		else return tail->val;
+		if (empty()) {
+			return -1;
+		}
+		return tail->prev->val;
 	}
-
-
 };
 
-List list;
-
+Deque deque;
 
 int main() {
-	ios_base::sync_with_stdio(false);
+	ios::sync_with_stdio(false);
 	cin.tie(NULL);
+
 	int n;
+	char text[15];
+	int num;
 	cin >> n;
+	deque.init();
 	while (n--) {
-		char query[11];
-		int num;
-		cin >> query;
-		if (!strcmp(query, "push_back")) {
+		cin >> text;
+		if (!mstrcmp(text, "push_back")) {
 			cin >> num;
-			list.push_back(newNode(num));
+			deque.push_back(num);
 		}
-		else if (!strcmp(query, "push_front")) {
+		else if (!mstrcmp(text, "push_front")) {
 			cin >> num;
-			list.push_front(newNode(num));
+			deque.push_front(num);
 		}
-		else if (!strcmp(query, "pop_front")) {
-			cout << list.pop_front() << '\n';
+		else if (!mstrcmp(text, "pop_front")) {
+			cout << deque.pop_front() << '\n';
 		}
-		else if (!strcmp(query, "pop_back")) {
-			cout << list.pop_back() << '\n';
+		else if (!mstrcmp(text, "pop_back")) {
+			cout << deque.pop_back() << '\n';
 		}
-		else if (!strcmp(query, "size")) {
-			cout << list.size() << '\n';
+		else if (!mstrcmp(text, "size")) {
+			cout << deque.size() << '\n';
 		}
-		else if (!strcmp(query, "empty")) {
-			cout << list.isEmpty() << '\n';
+		else if (!mstrcmp(text, "empty")) {
+			cout << deque.empty() << '\n';
 		}
-		else if (!strcmp(query, "front")) {
-			cout << list.front() << '\n';
+		else if (!mstrcmp(text, "front")) {
+			cout << deque.front() << '\n';
 		}
-		else if (!strcmp(query, "back")) {
-			cout << list.back() << '\n';
+		else if (!mstrcmp(text, "back")) {
+			cout << deque.back() << '\n';
 		}
 	}
 }
