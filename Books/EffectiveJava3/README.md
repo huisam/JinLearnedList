@@ -9,4 +9,4 @@
 책 내용을 각각 **Chapter**별로 구분하였고,
 각각의 **Chapter**에는 다양한 `Item`에 대한 정리를 진행할게요!
 
-1. [2장 - 객체 생성과 파괴](/)
+1. [2장 - 객체 생성과 파괴](https://github.com/huisam/JinLearnedList/blob/master/Books/EffectiveJava3/2%EC%9E%A5-%EA%B0%9D%EC%B2%B4%20%EC%83%9D%EC%84%B1%EA%B3%BC%20%ED%8C%8C%EA%B4%B4/README.md)

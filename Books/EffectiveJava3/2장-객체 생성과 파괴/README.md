@@ -33,12 +33,12 @@ NutritionFacts cocaCola = new NutritionFacts(240, 8, 100, 0, 35, 27);
 이런 Code와
 ```java
 NutritionFacts cocaCola = new NutritionFacts.Builder()
-											.servingSize(240)
-											.servings(8)
-											.calories(100)
-											.sodium(35)
-											.carbohydrate(27)
-											.build();
+						.servingSize(240)
+						.servings(8)
+						.calories(100)
+						.sodium(35)
+						.carbohydrate(27)
+						.build();
 ```
 이러한 빌더 패턴의 코드차이는 벌써 **가독성**에서 부터 다르다
 하지만 매개변수가 3개 이하라면 일반적인 **생성자**를 써도 무관하다
