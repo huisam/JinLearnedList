@@ -40,8 +40,8 @@ NutritionFacts cocaCola = new NutritionFacts.Builder()
 					.carbohydrate(27)
 					.build();
 ```
-이러한 빌더 패턴의 코드차이는 벌써 **가독성**에서 부터 다르다
-하지만 매개변수가 3개 이하라면 일반적인 **생성자**를 써도 무관하다
+이러한 빌더 패턴의 코드차이는 벌써 **가독성**에서 부터 다르다<br>
+하지만 매개변수가 3개 이하라면 일반적인 **생성자**를 써도 무관하다<br>
 
 #### Item3 - private 생성자나 열거 타입으로 싱글턴임을 보증하라
 
@@ -49,14 +49,14 @@ NutritionFacts cocaCola = new NutritionFacts.Builder()
 
 #### Item6 - 불필요한 객체 생성을 피하라
 
-기본적으로 정규표현식을 사용해서 원하는 문자열을 얻고 싶을 때
+기본적으로 정규표현식을 사용해서 원하는 문자열을 얻고 싶을 때<br>
 다음 처럼 작성할 수 있다
 ```java
 static boolean isRomanNumeral(final String s) {
 	return s.matches("\d\d\d");
 }
 ```
-이 방식의 문제점은 무엇일까요?
+이 방식의 문제점은 무엇일까요?<br>
 함수가 호출될 때마다 **String 객체**에서 정규표현식용 `Pattern`인스턴스를 매번 만드는 성능상의 이슈가 있습니다.
 
 *그럼 어떻게 바꿔야 할까요?*
@@ -71,8 +71,8 @@ public class RomanNumerals{
 	}
 }
 ```
-이렇게 개선하면 `ROMAN`이라는 하나의 인스턴스로 성능을 개선하고,
-재사용성을 높일 수 있게 됩니다!
+이렇게 개선하면 `ROMAN`이라는 하나의 인스턴스로 성능을 개선하고,<br>
+재사용성을 높일 수 있게 됩니다!<br>
 
 **박싱된 기본 타입보다는 기본 타입을 사용하자**
 ```java
@@ -84,19 +84,19 @@ private static long sum() {
 	return sum;
 }
 ```
-이 코드의 문제점이 무엇일까요?
-**바로 매번 객체를 만드는 끔찍한 일을 하고 있습니다**
-절대로 `불필요한 객체 생성`은 최대한 하지 맙시다!
+이 코드의 문제점이 무엇일까요?<br>
+**바로 매번 객체를 만드는 끔찍한 일을 하고 있습니다**<br>
+절대로 `불필요한 객체 생성`은 최대한 하지 맙시다!<br>
 
 
 #### Item7 - 다 쓴 객체 참조를 해제하라
 
-Java에서는 `가비지 콜렉터`라는 엄청난 친구가 있다
-이 `가비지 콜렉터`는 SW상에 더이상 참조되지 않는 메모리 영역이 있다면
-알아서 메모리를 해제 하는 역할을 담당하고 있다
+Java에서는 `가비지 콜렉터`라는 엄청난 친구가 있다<br>
+이 `가비지 콜렉터`는 SW상에 더이상 참조되지 않는 메모리 영역이 있다면<br>
+알아서 메모리를 해제 하는 역할을 담당하고 있다<br>
 
-하지만 프로그래머가 쓸데없이 계속 참조하는 코드를 작성하면,
-**영영 메모리 해제**가 불가능하다
+하지만 프로그래머가 쓸데없이 계속 참조하는 코드를 작성하면,<br>
+**영영 메모리 해제**가 불가능하다<br>
 
 잘못된 예부터 보자
 ```java
@@ -106,8 +106,8 @@ public Object pop() {
 	return elements[--size];
 }
 ```
-얼핏 보면 괜찮아 보이지만,
-계속해서 add되고 pop되는게 반복되면 이전 메모리가 절대 해제되지 않는다!
+얼핏 보면 괜찮아 보이지만,<br>
+계속해서 add되고 pop되는게 반복되면 이전 메모리가 절대 해제되지 않는다!<br>
 
 ```java
 public Object pop() {
@@ -118,7 +118,7 @@ public Object pop() {
 	return result;
 }
 ```
-이러한 메모리 누수에 대한 사례는 겉으로 잘 드러나지 않고, 수년간 시스템에 잠복되는 경우가 많으니 각별히 주의하도록 하자!
+이러한 메모리 누수에 대한 사례는 겉으로 잘 드러나지 않고, 수년간 시스템에 잠복되는 경우가 많으니 각별히 주의하도록 하자!<br>
 > 리뷰를 요청하거나, 리뷰를 요청하거나, 리뷰를 요청하거나...
 
 #### Item8 - finallizer와 cleaner 사용을 피하라
@@ -127,7 +127,7 @@ public Object pop() {
 
 #### Item9 - try-finally 보다는 try-with-resources 사용하라
 
-우선 try-finally는 정말 코드상으로 역겨워지는 방식중의 하나다.
+우선 try-finally는 정말 코드상으로 역겨워지는 방식중의 하나다.<br>
 다음 같은 예시를 볼까?
 ```java
 static void copy(String src, String dst) throws IOException {
@@ -149,9 +149,9 @@ static void copy(String src, String dst) throws IOException {
 ```
 와후 정말 끔찍하다
 
-`Java7`에서 이러한 문제들을 이미 해결했다!!
-`AutoCloseable` 인터페이스를 상속받은 객체는 모두 try-with-resource 문법을 이용할 수 있다!!!
-**한마디로 열어 놓으면 지가 알아서 닫는다는 말이다**
+`Java7`에서 이러한 문제들을 이미 해결했다!!<br>
+`AutoCloseable` 인터페이스를 상속받은 객체는 모두 try-with-resource 문법을 이용할 수 있다!!!<br>
+**한마디로 열어 놓으면 지가 알아서 닫는다는 말이다**<br>
 ```java
 static void copy(String src, String dst) throws IOException {
 	try (InputStream in = new FileInputStream(src);
