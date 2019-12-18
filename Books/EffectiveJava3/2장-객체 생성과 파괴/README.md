@@ -1,4 +1,4 @@
-#### Item1 - 생성자 대신 정적 팩터리 메서드를 고려하라
+### Item1 - 생성자 대신 정적 팩터리 메서드를 고려하라
 
 [정적 팩터리 메서드 패턴](https://github.com/huisam/JinLearnedList/blob/master/DesignPattern/abstractfactory)
 
@@ -25,7 +25,7 @@
 * newType : newInstance와 같으나 생성할 클래스가 아닌 다른 클래스에 팩터리 메서들르 정의할 때 쓴다 `BufferedReader br = Files.newBufferedReader(path)`
 * type : getType와 newType의 간결한 버전
 
-#### Item2 - 생성자에 매개변수가 많다면 빌더를 고려하라
+### Item2 - 생성자에 매개변수가 많다면 빌더를 고려하라
 
 ```java
 NutritionFacts cocaCola = new NutritionFacts(240, 8, 100, 0, 35, 27);
@@ -43,11 +43,11 @@ NutritionFacts cocaCola = new NutritionFacts.Builder()
 이러한 빌더 패턴의 코드차이는 벌써 **가독성**에서 부터 다르다<br>
 하지만 매개변수가 3개 이하라면 일반적인 **생성자**를 써도 무관하다<br>
 
-#### Item3 - private 생성자나 열거 타입으로 싱글턴임을 보증하라
+### Item3 - private 생성자나 열거 타입으로 싱글턴임을 보증하라
 
 위 설명은 [블로그 링크](https://huisam.tistory.com/entry/Singleton)로 대체합니다!
 
-#### Item6 - 불필요한 객체 생성을 피하라
+### Item6 - 불필요한 객체 생성을 피하라
 
 기본적으로 정규표현식을 사용해서 원하는 문자열을 얻고 싶을 때<br>
 다음 처럼 작성할 수 있다
@@ -89,7 +89,7 @@ private static long sum() {
 절대로 `불필요한 객체 생성`은 최대한 하지 맙시다!<br>
 
 
-#### Item7 - 다 쓴 객체 참조를 해제하라
+### Item7 - 다 쓴 객체 참조를 해제하라
 
 Java에서는 `가비지 콜렉터`라는 엄청난 친구가 있다<br>
 이 `가비지 콜렉터`는 SW상에 더이상 참조되지 않는 메모리 영역이 있다면<br>
@@ -121,11 +121,11 @@ public Object pop() {
 이러한 메모리 누수에 대한 사례는 겉으로 잘 드러나지 않고, 수년간 시스템에 잠복되는 경우가 많으니 각별히 주의하도록 하자!<br>
 > 리뷰를 요청하거나, 리뷰를 요청하거나, 리뷰를 요청하거나...
 
-#### Item8 - finallizer와 cleaner 사용을 피하라
+### Item8 - finallizer와 cleaner 사용을 피하라
 
 **제곧내**(제목이 곧 내용)
 
-#### Item9 - try-finally 보다는 try-with-resources 사용하라
+### Item9 - try-finally 보다는 try-with-resources 사용하라
 
 우선 try-finally는 정말 코드상으로 역겨워지는 방식중의 하나다.<br>
 다음 같은 예시를 볼까?
