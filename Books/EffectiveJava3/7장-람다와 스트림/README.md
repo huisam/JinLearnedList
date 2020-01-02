@@ -46,15 +46,16 @@ TreeMap<K,V>::new == () -> new TreeMap<K,V>()
 
 ### Item44 - 표준 함수형 인터페이스를 사용하라
 
-우리가 자주쓰는 람다식의 경우 대게 **표준 함수형 인터페이스화** 되어 있을 확률이 높다 <br>
-|인터페이스|함수 시그니처|예|
-|---|---|---|
-|UnaryOperator<T>|T apply(T t)|String::toLowerCase|
-|BinaryOperator<T>|T apply(T t1, T t2)|BigInteger::add|
-|Predicate<T>|boolean test(T t)|Collection::isEmpty|
-|Function<T,R>|R apply(T t)|Arrays::asList|
-|Supplier<T>|T get()|Instant::now|
-|Consumer<T>|void accept(T t)|System.out::println|
+우리가 자주쓰는 람다식의 경우 대게 **표준 함수형 인터페이스화** 되어 있을 확률이 높다  
+
+인터페이스 | 함수 시그니처 | 예
+----- | ----- | -----
+UnaryOperator<T> | T apply(T t) | String::toLowerCase
+BinaryOperator<T> | T apply(T t1, T t2) | BigInteger::add
+Predicate<T> | boolean test(T t) | Collection::isEmpty
+Function<T,R> | R apply(T t) | Arrays::asList
+Supplier<T> | T get() | Instant::now
+Consumer<T> | void accept(T t) | System.out::println
 
 ### Item45 - 스트림은 주의해서 사용하라
 
