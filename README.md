@@ -51,6 +51,7 @@
 		* [Observer](https://huisam.tistory.com/entry/Observer)
 		* [Strategy](https://huisam.tistory.com/entry/Strategy)
 		* [TemplateMethod](https://huisam.tistory.com/entry/TemplateMethodPattern)
+		* [TemplateCallback](https://huisam.tistory.com/entry/templateCallback)
 		* [Visitor](https://huisam.tistory.com/entry/Visitor)
 
 ### Network
