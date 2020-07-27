@@ -18,3 +18,4 @@
 7. [8장 - 메서드](https://github.com/huisam/JinLearnedList/blob/master/Books/EffectiveJava3/8%EC%9E%A5-%EB%A9%94%EC%84%9C%EB%93%9C/README.md)
 8. [9장 - 일반적인 프로그래밍 원칙](https://github.com/huisam/JinLearnedList/blob/master/Books/EffectiveJava3/9%EC%9E%A5-%EC%9D%BC%EB%B0%98%EC%A0%81%EC%9D%B8%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EC%9B%90%EC%B9%99/README.md)
 9. [10장 - 예외](https://github.com/huisam/JinLearnedList/blob/master/Books/EffectiveJava3/Ch10-%EC%98%88%EC%99%B8/README.md)
+10. [11장 - 동시성]([https://github.com/huisam/JinLearnedList/blob/master/Books/EffectiveJava3/Ch11-%EB%8F%99%EC%8B%9C%EC%84%B1/README.md](https://github.com/huisam/JinLearnedList/blob/master/Books/EffectiveJava3/Ch11-동시성/README.md))
