@@ -4,11 +4,12 @@
 
 ### Algorithm
 * Baekjoon 문제 풀이
-	* C++
-	* Java
-	* Python
+	* [C++](Algorithm/baekjoon/c%2B%2B)
+	* [Java](Algorithm/baekjoon/java)
+	* [Python](Algorithm/baekjoon/python)
 * LeetCode 문제 풀이
-	* Python
+	* [Python](Algorithm/leetcode/python)
+	* [Kotlin](Algorithm/leetcode/kotlin)
 
 ### Books
 
@@ -74,16 +75,14 @@
 5. [DIP - Dependency Inversion Principle](https://huisam.tistory.com/entry/DIP)
 
 
+## Spring
+
+주로 [블로그 포스팅](https://huisam.tistory.com/category/Developer/Spring)으로 실시
+
 ### To Do List
 
-* `Spring` 카테고리 도입 준비중
-
 * 프로그래밍 도서 읽기
-	* [Clean Code](http://www.yes24.com/Product/goods/11681152) 책 읽고 정리중
-	* [토비의 스프링 3.1 Vol.1 스프링의 이해와 원리](http://www.yes24.com/Product/goods/7516721) 마찬가지로 정리
 	* [레거시 코드 활용 전략](http://acornpub.co.kr/book/legacy-code) 책 읽고 정리하자
 	* [함수형 사고](http://www.hanbit.co.kr/store/books/look.php?p_code=B6064588422) 책 읽기
-
-* `Reactive Java` 카테고리는 **함수형 사고** 책을 읽고 도입
 
 그 외적으로 개발방법론, 리팩토링 관련한 나의 `주관`은 블로그에 정리할 예정
